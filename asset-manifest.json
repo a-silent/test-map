@@ -1,5 +1,5 @@
 {
-  "main.css": "/test-map/static/css/main.347e4172.chunk.css",
+  "main.css": "/test-map/static/css/main.04f140f8.chunk.css",
   "main.js": "/test-map/static/js/main.1521b696.chunk.js",
   "main.js.map": "/test-map/static/js/main.1521b696.chunk.js.map",
   "runtime~main.js": "/test-map/static/js/runtime~main.43522433.js",
@@ -8,9 +8,9 @@
   "static/js/2.44194196.chunk.js": "/test-map/static/js/2.44194196.chunk.js",
   "static/js/2.44194196.chunk.js.map": "/test-map/static/js/2.44194196.chunk.js.map",
   "index.html": "/test-map/index.html",
-  "precache-manifest.404e014dd21a67b34494b3779e1d20df.js": "/test-map/precache-manifest.404e014dd21a67b34494b3779e1d20df.js",
+  "precache-manifest.5dbda0dc014ebe27f5ed196e76e730f3.js": "/test-map/precache-manifest.5dbda0dc014ebe27f5ed196e76e730f3.js",
   "service-worker.js": "/test-map/service-worker.js",
   "static/css/2.70c5aa51.chunk.css.map": "/test-map/static/css/2.70c5aa51.chunk.css.map",
-  "static/css/main.347e4172.chunk.css.map": "/test-map/static/css/main.347e4172.chunk.css.map",
+  "static/css/main.04f140f8.chunk.css.map": "/test-map/static/css/main.04f140f8.chunk.css.map",
   "static/media/welcome.png": "/test-map/static/media/welcome.4026e67e.png"
 }
