@@ -1,31 +1,37 @@
 import React, { Component } from 'react';
+import {connect} from "react-redux";
+
 import { Map, TileLayer, GeoJSON } from 'react-leaflet';
+import L from 'leaflet';
+
+import "../../utils/animatedMarker";
+import { walkIcon } from "../../utils/markerIcons";
 
 import Marker from "../Marker"
 
-import L from 'leaflet';
-
-import icon from 'leaflet/dist/images/marker-icon.png';
-import iconShadow from 'leaflet/dist/images/marker-shadow.png';
-import {connect} from "react-redux";
-
-let DefaultIcon = L.icon({
-  iconUrl: icon,
-  shadowUrl: iconShadow,
-  iconAnchor: [13, 41],
-  popupAnchor: [0, -41]
-});
-
-L.Marker.prototype.options.icon = DefaultIcon;
-
 class LeafletMap extends Component {
+  
+  handleClick = event => {
+    const { coordinates } = this.props.geoJSON.fromHomeToAlevel.features[0].geometry
+ 
+	const coordinatesReverse = coordinates.map(item => item.reverse())
+ 
+	const line = L.polyline(coordinatesReverse)
+	const animatedMarker = L.animatedMarker(line.getLatLngs(), {
+	  interval: 300,
+	  icon: walkIcon,
+	  onEnd: () => event.target.removeLayer(animatedMarker)
+	});
+	event.target.addLayer(animatedMarker);
+  }
 
   render() {
-    
+    console.log(this.props)
     const { center, zoom, maxZoom, geoJSON, markers } = this.props;
 	
     return (
 	  <Map
+		onClick={this.handleClick}
 		center={center}
 		zoom={zoom}
 		maxZoom={maxZoom}
@@ -37,10 +43,7 @@ class LeafletMap extends Component {
 		<Marker markers={markers}/>
 		<GeoJSON
 		  data={geoJSON.fromHomeToAlevel}
-		  style={() => ({
-			color: "blue",
-			weight: 5
-		  })}
+		  style={feature => feature.properties}
 		/>
 	  </Map>
 	)

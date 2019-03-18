@@ -3,8 +3,9 @@
 @import "abstracts/variables";
 @import "abstracts/mixins";
 
+@import "base/base";
+
 @import "pages/app";
 
 @import "components/header";
-
-@import "base/base";
+@import "components/leafletmap";

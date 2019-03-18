@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
 
 class Header extends Component {
   
@@ -6,7 +7,7 @@ class Header extends Component {
     visibility: false
   }
   
-  handleClick = event =>
+  handleClick = () =>
 	this.setState(state => ({
 	  visibility: !state.visibility
 	}))
@@ -19,7 +20,7 @@ class Header extends Component {
 	  <header className={visibility ? "header" : "header header-hidden"}>
 		<ul className="header__list">
 		  <li className="header__list__item">
-			<button className="header__list__item__button">test1</button>
+			<Link to="/map">Map</Link>
 		  </li>
 		  <li className="header__list__item">
 			<button className="header__list__item__button">test2</button>
