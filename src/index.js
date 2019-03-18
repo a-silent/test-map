@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from "react-redux";
-import { BrowserRouter } from "react-router-dom";
+import { Router } from "react-router-dom";
 
 import App from './containers/App';
 import store from "./store";
@@ -12,8 +12,8 @@ import "./style/index.scss";
 
 ReactDOM.render(
   <Provider store={store}>
-	<BrowserRouter history={history} basename={process.env.PUBLIC_URL}>
+	<Router history={history} basename={process.env.PUBLIC_URL}>
 	  <App />
-	</BrowserRouter>
+	</Router>
   </Provider>,
   document.getElementById('root'));
