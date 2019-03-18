@@ -7,10 +7,9 @@ class Header extends Component {
     visibility: false
   }
   
-  handleClick = () =>
-	this.setState(state => ({
+  handleClickShowMenu = () => this.setState(state => ({
 	  visibility: !state.visibility
-	}))
+  }))
   
   render() {
     
@@ -20,19 +19,37 @@ class Header extends Component {
 	  <header className={visibility ? "header" : "header header-hidden"}>
 		<ul className="header__list">
 		  <li className="header__list__item">
-			<Link to="/map">Map</Link>
+			<Link
+			  className="header__list__item__link"
+			  to="/"
+			  onClick={this.handleClickShowMenu}
+			>
+			  Home
+			</Link>
 		  </li>
 		  <li className="header__list__item">
-			<button className="header__list__item__button">test2</button>
+			<Link
+			  className="header__list__item__link"
+			  to="/map"
+			  onClick={this.handleClickShowMenu}
+			>
+			  Map
+			</Link>
 		  </li>
 		  <li className="header__list__item">
-			<button className="header__list__item__button">test3</button>
+			<Link
+			  className="header__list__item__link"
+			  to="/form"
+			  onClick={this.handleClickShowMenu}
+			>
+			  Form
+			</Link>
 		  </li>
 		</ul>
 		<button
 		  className="header__button"
 		  type="button"
-		  onClick={this.handleClick}
+		  onClick={this.handleClickShowMenu}
 		>
 		  Show menu
 		</button>
