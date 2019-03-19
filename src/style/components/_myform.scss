@@ -10,6 +10,56 @@
   }
 
   &__form {
+    display: flex;
+    flex-direction: column;
+    max-width: 70%;
+    margin: 0 auto;
+    padding: 15px;
+    background-color: #3388ff35;
+    border: 1px solid #3388ff;
+    border-radius: 15px;
 
+    & input {
+      margin-bottom: 10px;
+      padding: 5px;
+      font-size: 18px;
+      border-radius: 5px;
+      border: none;
+      outline: none;
+
+      &:focus {
+        box-shadow: 0 0 5px darkblue;
+      }
+
+      &:last-of-type {
+        margin-bottom: 20px;
+      }
+    }
+
+    & button {
+      margin-bottom: 10px;
+      padding: 5px 0;
+      background-color: #3388ffd0;
+      color: #ffffff;
+      text-shadow: 0 0 3px black;
+      font-size: 18px;
+      letter-spacing: 0.2em;
+      border: 1px solid darkblue;
+      border-radius: 5px;
+      outline: none;
+
+      &:hover {
+        cursor: pointer;
+        box-shadow: 2px 2px 3px darkblue;
+      }
+
+      &:active {
+        box-shadow: 2px 2px 3px darkblue inset;
+      }
+
+      &:last-of-type {
+        margin-bottom: 0;
+      }
+    }
   }
 }
